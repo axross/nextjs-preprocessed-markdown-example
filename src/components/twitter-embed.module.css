@@ -1,0 +1,20 @@
+.root {
+  width: 550px;
+  max-width: 100%;
+
+  & > div {
+    width: 100%;
+
+    & > div {
+      width: 100%;
+
+      & > div {
+        width: 100% !important;
+
+        & > iframe {
+          width: 100% !important;
+        }
+      }
+    }
+  }
+}

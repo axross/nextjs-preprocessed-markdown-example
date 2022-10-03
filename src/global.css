@@ -1,0 +1,134 @@
+@import "open-props/postcss/style";
+
+:where(html) {
+  --color-background: #f3f4f6;
+  --color-surface: #fff;
+
+  --color-neutral-1: #f5f6f8;
+  --color-neutral-2: #e3e6ea;
+  --color-neutral-3: #bdc4cd;
+  --color-neutral-4: #98a2ae;
+  --color-neutral-5: #717880;
+  --color-neutral-6: #5f666e;
+  --color-neutral-7: #4c535c;
+  --color-neutral-8: #353c44;
+  --color-neutral-9: #23282f;
+
+  --color-primary-1: #e9f1ff;
+  --color-primary-2: #c9ddfd;
+  --color-primary-3: #92bafb;
+  --color-primary-4: #5798f6;
+  --color-primary-5: #2a6fd0;
+  --color-primary-6: #195394;
+  --color-primary-7: #0c3d6a;
+  --color-primary-8: #052f50;
+  --color-primary-9: #011d32;
+
+  --ax-size-1: 0.25rem;
+  --ax-size-2: 0.5rem;
+  --ax-size-3: 0.75rem;
+  --ax-size-4: 1rem;
+  --ax-size-5: 1.5rem;
+  --ax-size-6: 2rem;
+  --ax-size-7: 3rem;
+  --ax-size-8: 4rem;
+  --ax-size-9: 6rem;
+  --ax-size-10: 8rem;
+
+  --ax-border-width-1: 0.5px;
+  --ax-border-width-2: 1px;
+  --ax-border-width-3: 1.5px;
+
+  --ax-radius-1: 3px;
+  --ax-radius-2: 5px;
+  --ax-radius-3: 15px;
+  --ax-radius-full: 9999px;
+
+  --ax-font-size-1: 0.625rem;
+  --ax-font-size-2: 0.8125rem;
+  --ax-font-size-3: 1rem;
+  --ax-font-size-4: 1.25rem;
+  --ax-font-size-5: 1.625rem;
+  --ax-font-size-6: 2rem;
+
+  --ax-line-height-1: 1;
+  --ax-line-height-2: 1.25;
+  --ax-line-height-3: 1.5;
+
+  --ax-box-shadow-2: 0px 1.875rem 3.75rem -0.75rem #24282e12;
+  --ax-box-shadow-3: 0px 1.125rem 3.375rem -1.125rem #24282e1a;
+
+  --ax-timing-1: 150ms;
+  --timing-2: 300ms;
+
+  --ax-easing-1: cubic-bezier(.5, -.1, .1, 1.5);
+  --ax-easing-2: cubic-bezier(.5, -.3, .1, 1.5);
+  --ax-easing-3: cubic-bezier(.5, -.5, .1, 1.5);
+  --ax-easing-4: cubic-bezier(.5, -.7, .1, 1.5);
+  --ax-easing-5: cubic-bezier(.5, -.9, .1, 1.5);
+
+  --code-background: #23282f;
+  --code-token-plain: #c9d1d9;
+  --code-token-punctuation: #9da4ab;
+  --code-token-property: #79c0ff;
+  --code-token-string: #a5d6ff;
+  --code-token-keyword: #ff7b72;
+  --code-token-parameter: #ffa657;
+  --code-token-element: #7ee787;
+  --code-token-function: #d2a8ff;
+  --code-token-comment: #576574;
+
+  @media screen and (prefers-color-scheme: dark) {
+    --color-background: #18181b;
+    --color-surface: #1d1d20;
+
+    --color-neutral-1: #1A1E24;
+    --color-neutral-2: #262A2F;
+    --color-neutral-3: #40454C;
+    --color-neutral-4: #5D646C;
+    --color-neutral-5: #848C96;
+    --color-neutral-6: #959FAB;
+    --color-neutral-7: #AAB4C2;
+    --color-neutral-8: #C7D0DA;
+    --color-neutral-9: #E5E8ED;
+  
+    --color-primary-1: #0E0F23;
+    --color-primary-2: #171D45;
+    --color-primary-3: #233778;
+    --color-primary-4: #2D55A8;
+    --color-primary-5: #377BE3;
+    --color-primary-6: #7F9BEE;
+    --color-primary-7: #ACB6EE;
+    --color-primary-8: #C5C8EB;
+    --color-primary-9: #E1E1EE;
+  }
+}
+
+:root {
+  background-color: var(--color-background);
+  font-size: clamp(16px, 2vw, 18px);
+}
+
+body {
+  margin: 0;
+}
+
+.app {
+  width: calc(100% - 2rem);
+  max-width: 640px;
+  margin-inline: auto;
+  padding-block: 4rem;
+
+  @media screen and (max-width: 400px) {
+    padding-inline: 1rem;
+  }
+
+  & > .title {
+    margin-block-start: 0;
+    margin-block-end: 1.5rem;
+    color: var(--color-neutral-9);
+    font-size: 2.5rem;
+    font-weight: 700;
+    font-family: system-ui, -apple-system, sans-serif;
+  }
+}

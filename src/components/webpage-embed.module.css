@@ -1,0 +1,112 @@
+.root {
+  display: grid;
+  background-color: var(--color-surface);
+  border-radius: 6px;
+  color: inherit;
+  text-decoration: inherit;
+
+  & > .title,
+  & > .description,
+  & > .url {
+    line-height: 1.25;
+    overflow: hidden;
+  }
+
+  & > .title,
+  & > .description {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    box-orient: vertical;
+  }
+
+  & > .title {
+    grid-area: title;
+    color: var(--color-neutral-9);
+    font-size: 1.1rem;
+    font-weight: 500;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+    transition: color var(--timing-2) var(--ax-easing-3);
+  }
+
+  & > .description {
+    grid-area: description;
+    color: var(--color-neutral-7);
+    font-size: 1rem;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+  }
+
+  & > .url {
+    grid-area: url;
+    color: var(--color-neutral-5);
+    font-size: 0.75rem;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  } 
+
+  & > .thumbnail {
+    grid-area: thumbnail;
+
+    & > * {
+      vertical-align: top;
+    }
+  }
+
+  &:hover {
+    & > .title {
+      color: var(--color-primary-5);
+      text-decoration: underline;
+    }
+  }
+
+  @container (max-width: 400px) {
+    & {
+      grid-template-columns: auto;
+      grid-template-rows: auto;
+      grid-template-areas: "thumbnail" "title" "description" "url";
+      column-gap: 1rem;
+      row-gap: 0.5rem;
+      padding: 1rem;
+
+      & > .title {
+        margin-top: 0.5rem;
+      }
+
+      & > .thumbnail {
+        grid-area: thumbnail;
+        width: calc(100% + 1rem * 2);
+        height: auto;
+        margin: 0;
+        margin-top: calc(1rem * -1);
+        margin-inline: calc(1rem * -1);
+        
+        & img {
+          aspect-ratio: 16 / 9;
+          border-radius: 6px 6px 0 0;
+        }
+      }
+    }
+  }
+
+  @container (min-width: 401px) {
+    & {
+      grid-template-columns: calc((1.1rem * 2 + 1rem * 2 + 0.75rem) * 1.25 + 0.5rem * 2 + 1rem) 1fr;
+      grid-template-rows: min-content min-content 1fr;
+      grid-template-areas: "thumbnail title" "thumbnail description" "thumbnail url";
+      column-gap: 1rem;
+      row-gap: 0.5rem;
+      padding: 1rem;
+
+      & > .thumbnail {
+        aspect-ratio: 1 / 1;
+        margin-block: calc(1rem * -1);
+        margin-left: calc(1rem * -1);
+        
+        & img {
+          border-radius: 6px 0 0 6px;
+        }
+      }
+    }
+  }
+}

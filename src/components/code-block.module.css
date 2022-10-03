@@ -1,0 +1,157 @@
+.root {
+  position: relative;
+  border-radius: 6px;
+
+  & > .block {
+    display: block;
+    margin: 0;
+    padding-block: 1rem;
+    padding-inline: 1.25rem;
+    background-color: var(--code-background);
+    border: #ffffff0f 1px solid;
+    border-radius: 6px;
+    color: var(--code-token-plain);
+    font-size: 0.88rem;
+    font-family: Inconsolata, Fira Mono, ui-monospace, SF Mono, Monaco, Droid Sans Mono, Source Code Pro, monospace;
+    line-height: 1.5;
+    white-space: pre;
+    tab-size: 4;
+    hyphens: none;
+    overflow-x: scroll;
+
+    & > .token[data-tokentype~=plain] {
+      color: var(--code-token-plain);
+    }
+    
+    & > .token[data-tokentype~=atrule] {
+      color: var(--code-token-parameter);
+    }
+
+    & > .token[data-tokentype~=rule] {
+      color: var(--code-token-keyword);
+    }
+
+    & > .token[data-tokentype~=selector] {
+      color: var(--code-token-element);
+
+      &[data-tokentype~=class],
+      &[data-tokentype~=id],
+      &[data-tokentype~=pseudo-element],
+      &[data-tokentype~=pseudo-class] {
+        color: var(--code-token-property);
+      }
+
+      &[data-tokentype~=n-th] {
+        color: var(--code-token-string);
+      }
+    }
+
+    & > .token[data-tokentype~=constant],
+    & > .token[data-tokentype~=class-name],
+    & > .token[data-tokentype~=maybe-class-name] {
+      color: var(--code-token-parameter);
+
+      &[data-tokentype~=operator] {
+        color: var(--code-token-property);
+      }
+    }
+
+    & > .token[data-tokentype~=function] {
+      color: var(--code-token-function);
+    }
+
+    & > .token[data-tokentype~=property] {
+      color: var(--code-token-property);
+    }
+
+    & > .token[data-tokentype~=parameter] {
+      color: var(--code-token-parameter);
+    }
+
+    & > .token[data-tokentype~=tag] {
+      color: var(--code-token-element);
+
+      &[data-tokentype~=script] {
+        color: var(--code-token-plain);
+      }
+    }
+
+    & > .token[data-tokentype~=attr-name] {
+      color: var(--code-token-property);
+    }
+
+    & > .token[data-tokentype~=attr-value] {
+      color: var(--code-token-string);
+    }
+
+    & > .token[data-tokentype~=regex] {
+      &[data-tokentype~=regex-delimiter] {
+        color: var(--code-token-property);
+      }
+    
+      &[data-tokentype~=regex-source] {
+        color: var(--code-token-string);
+      }
+    }
+
+    & > .token[data-tokentype~=hexcode][data-tokentype~=color] {
+      color: var(--code-token-property);
+    }
+
+    & > .token[data-tokentype~=number] {
+      color: var(--code-token-property);
+    }
+
+    & > .token[data-tokentype~=unit] {
+      color: var(--code-token-keyword);
+    }
+
+    & > .token[data-tokentype~=string] {
+      color: var(--code-token-string);
+    }
+
+    & > .token[data-tokentype~=builtin] {
+      color: var(--code-token-property);
+    }
+
+    & > .token[data-tokentype~=keyword],
+    & > .token[data-tokentype~=operator] {
+      color: var(--code-token-keyword);
+    }
+
+    & > .token[data-tokentype~=punctuation] {
+      color: var(--code-token-punctuation);
+    }
+
+    & > .token[data-tokentype~=comment] {
+      color: var(--code-token-comment);
+    }
+  }
+
+  & > .copy-button {
+    position: absolute;
+    top: calc(0.5rem * -1);
+    right: 1rem;
+    appearance: none;
+    padding-block: 0.25rem;
+    padding-inline: 0.5rem;
+    background: #0a0e14;
+    border: none;
+    border-radius: 6px;
+    color: white;
+    cursor: pointer;
+    outline: none;
+    opacity: 0;
+    user-select: none;
+    z-index: 1;
+    transition: all 150ms ease-in-out 0ms;
+
+    &:hover {
+      background: var(--gray-8);
+    }
+  }
+
+  &:hover > .copy-button {
+    opacity: 1;
+  }
+}

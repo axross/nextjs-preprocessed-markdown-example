@@ -1,0 +1,21 @@
+.root {
+  margin: 0;
+
+  & > .image {
+    & > span {
+      border-radius: 6px;
+      vertical-align: top;
+    }
+
+    & img {
+      border-radius: 6px;
+    }
+  }
+
+  & > .caption {
+    margin-block-start: 0.5rem;
+    color: var(--color-neutral-5);
+    font-size: 0.75rem;
+    text-align: center;
+  }
+}
